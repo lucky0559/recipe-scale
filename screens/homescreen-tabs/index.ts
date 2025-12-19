@@ -1,3 +1,3 @@
-import Tab1 from "@/screens/homescreen-tabs/Tab1";
+import AllRecipes from "@/screens/homescreen-tabs/AllRecipes";
 
-export { Tab1 };
+export { AllRecipes };

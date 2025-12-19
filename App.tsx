@@ -24,9 +24,9 @@ const RootStack = () => {
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    "Lemon-Milk-Medium": require("./assets/fonts/LEMONMILK-Medium.otf"),
-    "Roboto-Light": require("./assets/fonts/Roboto-Light.ttf"),
-    "Spicy-Sale": require("./assets/fonts/Spicy-Sale.ttf")
+    Lemon: require("./assets/fonts/LEMONMILK-Medium.otf"),
+    Roboto: require("./assets/fonts/Roboto-Light.ttf"),
+    Spicy: require("./assets/fonts/Spicy-Sale.ttf")
   });
 
   if (!fontsLoaded) return <AppLoading />; // or null

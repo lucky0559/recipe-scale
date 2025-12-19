@@ -1,5 +1,5 @@
 import { Text } from "@/components/common";
-import { Tab1 } from "@/screens/homescreen-tabs";
+import { AllRecipes } from "@/screens/homescreen-tabs";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import React from "react";
 import { View } from "react-native";
@@ -13,9 +13,7 @@ const HomeScreen = () => {
       style={{ paddingVertical: 24, flex: 1, backgroundColor: "white" }}
     >
       <View style={{ marginBottom: 20 }}>
-        <Text style={{ fontSize: 50, fontFamily: "Spicy-Sale" }}>
-          Recipe Scale
-        </Text>
+        <Text style={{ fontSize: 50, fontFamily: "Spicy" }}>Recipe Scale</Text>
       </View>
       <Tab.Navigator
         screenOptions={{
@@ -27,37 +25,36 @@ const HomeScreen = () => {
           tabBarLabelStyle: {
             fontWeight: "bold",
             fontSize: 16
+          },
+          tabBarIndicatorStyle: {
+            backgroundColor: "#F0735A"
           }
         }}
       >
         <Tab.Screen
-          name="Tab1"
-          component={Tab1}
+          name="AllRecipes"
+          component={AllRecipes}
           options={{
             tabBarLabel: ({}) => (
-              <Text style={{ fontFamily: "Lemon-Milk-Medium" }}>
-                All Recipes
-              </Text>
+              <Text style={{ fontFamily: "Lemon" }}>All Recipes</Text>
             )
           }}
         />
         <Tab.Screen
           name="Tab2"
-          component={Tab1}
+          component={AllRecipes}
           options={{
             tabBarLabel: ({}) => (
-              <Text style={{ fontFamily: "Lemon-Milk-Medium" }}>Favorite</Text>
+              <Text style={{ fontFamily: "Lemon" }}>Favorite</Text>
             )
           }}
         />
         <Tab.Screen
           name="Tab3"
-          component={Tab1}
+          component={AllRecipes}
           options={{
             tabBarLabel: ({}) => (
-              <Text style={{ fontFamily: "Lemon-Milk-Medium" }}>
-                Cost/Inventory
-              </Text>
+              <Text style={{ fontFamily: "Lemon" }}>Cost/Inventory</Text>
             )
           }}
         />

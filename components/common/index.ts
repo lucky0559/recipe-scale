@@ -1,3 +1,5 @@
-import Text from "@/components/common/Text";
+import { FoodCard } from "@/components/common/FoodCard";
+import { SearchBar } from "@/components/common/SearchBar";
+import { Text } from "@/components/common/Text";
 
-export { Text };
+export { FoodCard, SearchBar, Text };

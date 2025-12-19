@@ -6,12 +6,10 @@ interface Props extends TextProps {
   children: React.ReactNode;
 }
 
-const Text: React.FC<Props> = ({ style, children, ...rest }) => {
+export const Text = ({ style, children, ...rest }: Props) => {
   return (
-    <RNText {...rest} style={[{ fontFamily: "Roboto-Light" }, style]}>
+    <RNText {...rest} style={[{ fontFamily: "Roboto" }, style]}>
       {children}
     </RNText>
   );
 };
-
-export default Text;
