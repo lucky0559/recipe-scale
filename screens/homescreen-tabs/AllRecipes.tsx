@@ -30,6 +30,7 @@ const AllRecipes = () => {
             }}
             renderItem={({ item }) => (
               <View style={{ marginBottom: 24 }}>
+                // TODO: CLICKABLE CARD WITH DETAILS AND COMPUTATIONS
                 <FoodCard imageUrl={item.imageUrl} name={item.name} />
               </View>
             )}
