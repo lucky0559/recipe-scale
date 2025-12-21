@@ -1,3 +1,5 @@
-import { Recipe } from "./recipe";
+import { NavigationProp } from "./NavigationProp";
+import { Recipe } from "./Recipe";
+import { RootStackParamList } from "./RootStackParamList";
 
-export type { Recipe };
+export type { NavigationProp, Recipe, RootStackParamList };

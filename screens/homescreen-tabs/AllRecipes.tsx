@@ -1,15 +1,18 @@
 import { FoodCard, SearchBar, Text } from "@/components/common";
 import { recipes } from "@/mockData";
-import React from "react";
+import { NavigationProp } from "@/types";
+import { useNavigation } from "@react-navigation/native";
 import {
   FlatList,
   Keyboard,
-  TouchableWithoutFeedback,
-  View
+  TouchableOpacity,
+  TouchableWithoutFeedback
 } from "react-native";
 import styled from "styled-components/native";
 
 const AllRecipes = () => {
+  const navigation = useNavigation<NavigationProp>();
+
   return (
     <ParentWrapper>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
@@ -26,15 +29,24 @@ const AllRecipes = () => {
             keyExtractor={item => item.id.toString()}
             numColumns={2}
             columnWrapperStyle={{
-              justifyContent: "space-between"
+              justifyContent: "space-between",
+              marginHorizontal: 15
             }}
             renderItem={({ item }) => (
-              <View style={{ marginBottom: 24 }}>
-                // TODO: CLICKABLE CARD WITH DETAILS AND COMPUTATIONS
+              <TouchableOpacity
+                activeOpacity={0.8}
+                style={{ marginBottom: 36 }}
+                onPress={() =>
+                  navigation.navigate("FoodDetails", { id: item.id })
+                }
+              >
                 <FoodCard imageUrl={item.imageUrl} name={item.name} />
-              </View>
+              </TouchableOpacity>
             )}
             showsVerticalScrollIndicator={false}
+            // initialNumToRender={2}
+            // maxToRenderPerBatch={2}
+            // windowSize={4}
           />
         </ListWrapper>
       </ParentList>

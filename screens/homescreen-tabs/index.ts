@@ -1,3 +1,4 @@
 import AllRecipes from "@/screens/homescreen-tabs/AllRecipes";
+import ComingSoon from "@/screens/homescreen-tabs/ComingSoon";
 
-export { AllRecipes };
+export { AllRecipes, ComingSoon };

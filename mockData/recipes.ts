@@ -6,6 +6,8 @@ export const recipes: Recipe[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1761637604972-070dee14cd32?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     name: "Burnt Basque Cheesecake",
+    description:
+      "A rich and creamy cheesecake with a perfectly caramelized top and a velvety smooth center, offering a slightly burnt flavor that makes it irresistibly unique.",
     ingredients: [
       {
         name: "Butter",
@@ -34,118 +36,152 @@ export const recipes: Recipe[] = [
       },
       {
         name: "Salt",
-        needed: 1.4,
+        needed: 0.25,
         unit: "teaspoons"
       },
       {
         name: "Vanilla Extract",
-        needed: 1.2,
+        needed: 0.5,
         unit: "teaspoons"
       },
       {
         name: "All Purpose Flour",
-        needed: 1.2,
+        needed: 0.5,
         unit: "tablespoons"
       }
     ],
-    categories: ["cheesecake"]
+    categories: ["dessert"]
   },
   {
     id: 2,
     imageUrl:
-      "https://images.unsplash.com/photo-1761637604972-070dee14cd32?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "Burnt Basque Cheesecake",
+      "https://www.nestlegoodnes.com/ph/sites/default/files/styles/1_1_768px_width/public/srh_recipes/b851750ea117918778b2949c7de9df27.jpg.webp?itok=a2qGRlzi",
+    name: "Adobo Fried Rice",
+    description:
+      "Adobo fried rice is a flavorful and savory recipe featuring the classic Filipino adobo flavors, often mixed with shredded adobo meat and other aromatic ingredients. This recipe showcases the Filipinos' love for transforming traditional dishes into creative and satisfying fried rice variations.",
     ingredients: [
       {
-        name: "Butter",
+        name: "Pork Shoulder",
+        needed: 0.5,
+        unit: "kilograms"
+      },
+      {
+        name: "Garlic (Crushed)",
         needed: 1,
-        unit: "tablespoon"
+        unit: "head"
       },
       {
-        name: "Cream Cheese",
+        name: "Black Peppercorn",
         needed: 1,
-        unit: "bar"
+        unit: "teaspoon"
       },
       {
-        name: "Sugar",
-        needed: 6,
-        unit: "tablespoon"
+        name: "Vinegar",
+        needed: 3,
+        unit: "tablespoons"
       },
       {
-        name: "Egg",
-        needed: 2,
-        unit: "pieces"
-      },
-      {
-        name: "All Purpose Cream",
+        name: "30g Maggi Oyster Sauce",
         needed: 1,
-        unit: "packet"
+        unit: "sachet"
       },
       {
-        name: "Salt",
-        needed: 1.4,
-        unit: "teaspoons"
+        name: "8g Maggi Magic Sarap",
+        needed: 1,
+        unit: "sachet"
       },
       {
-        name: "Vanilla Extract",
-        needed: 1.2,
-        unit: "teaspoons"
+        name: "Water",
+        needed: 1,
+        unit: "cup"
       },
       {
-        name: "All Purpose Flour",
-        needed: 1.2,
+        name: "Vegetable Oil",
+        needed: 3,
+        unit: "tablespoons"
+      },
+      {
+        name: "Day Old Rice",
+        needed: 4,
+        unit: "cups"
+      },
+      {
+        name: "Toasted Garlic",
+        needed: 1,
+        unit: "tablespoons"
+      },
+      {
+        name: "Sliced Spring Onion",
+        needed: 1,
         unit: "tablespoons"
       }
     ],
-    categories: ["cheesecake"]
+    categories: ["breakfast", "entrant"]
   },
   {
     id: 3,
     imageUrl:
-      "https://images.unsplash.com/photo-1761637604972-070dee14cd32?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "Burnt Basque Cheesecake",
+      "https://www.nestlegoodnes.com/ph/sites/default/files/styles/1_1_768px_width/public/srh_recipes/6effa4d0067f9e24613a97949eae31bd.png.webp?itok=FyCYe9AO",
+    name: "Adobong Pinyanhang Manok",
+    description:
+      "Adobong Pininyahang Manok is a delightful Filipino dish that combines the classic flavors of adobo with the sweetness of pineapple. This unique fusion creates a mouthwatering and unforgettable culinary experience. The star of this recipe is the succulent chicken, marinated and cooked in a flavorful blend of soy sauce, vinegar, garlic, and spices.",
     ingredients: [
       {
-        name: "Butter",
+        name: "Chicken Leg and Wings",
         needed: 1,
-        unit: "tablespoon"
+        unit: "kilogram"
       },
       {
-        name: "Cream Cheese",
+        name: "10g Maggi Chicken Cube",
         needed: 1,
-        unit: "bar"
+        unit: "piece"
       },
       {
-        name: "Sugar",
-        needed: 6,
-        unit: "tablespoon"
+        name: "300ml Maggi Oyster Sauce",
+        needed: 0.25,
+        unit: "cups"
       },
       {
-        name: "Egg",
+        name: "Vinegar",
+        needed: 0.5,
+        unit: "cups"
+      },
+      {
+        name: "Bay Leaf",
         needed: 2,
         unit: "pieces"
       },
       {
-        name: "All Purpose Cream",
+        name: "Ground Pepper",
+        needed: 0.5,
+        unit: "teaspoons"
+      },
+      {
+        name: "Garlic (lightly crushed)",
         needed: 1,
-        unit: "packet"
+        unit: "head"
       },
       {
-        name: "Salt",
-        needed: 1.4,
-        unit: "teaspoons"
+        name: "Pineapple Chunks",
+        needed: 1,
+        unit: "can"
       },
       {
-        name: "Vanilla Extract",
-        needed: 1.2,
-        unit: "teaspoons"
+        name: "Brown Sugar",
+        needed: 1,
+        unit: "tablespoon"
       },
       {
-        name: "All Purpose Flour",
-        needed: 1.2,
+        name: "Waater",
+        needed: 0.5,
+        unit: "cups"
+      },
+      {
+        name: "Vegetable Oil",
+        needed: 2,
         unit: "tablespoons"
       }
     ],
-    categories: ["cheesecake"]
+    categories: ["dinner", "lunch", "entrant"]
   }
 ];

@@ -1,3 +1,4 @@
+import FoodDetails from "@/screens/FoodDetails";
 import HomeScreen from "@/screens/HomeScreen";
 
-export { HomeScreen };
+export { FoodDetails, HomeScreen };
