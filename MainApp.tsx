@@ -3,9 +3,7 @@ import { useGetCurrentUser } from "@/hooks/auth";
 import { FoodDetails, HomeScreen } from "@/screens";
 import Login from "@/screens/auth/Login";
 import { useUserStore } from "@/stores";
-import { useAuthStore } from "@/stores/AuthStore";
 import { RootStackParamList } from "@/types";
-import { getAccessToken } from "@/utils/authStorage";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -47,24 +45,9 @@ const AuthStack = () => {
 };
 
 export default function MainApp() {
-  useGetCurrentUser();
-  const isLoading = useAuthStore(state => state.isLoading);
+  const { isLoading } = useGetCurrentUser();
 
-  const { setUser, user } = useUserStore(state => state);
-
-  useEffect(() => {
-    const init = async () => {
-      const token = await getAccessToken();
-      console.log("token: ", token);
-
-      if (!token) {
-        setUser(null);
-        return;
-      }
-    };
-
-    init();
-  }, []);
+  const { user } = useUserStore(state => state);
 
   useEffect(() => {
     GoogleSignin.configure({

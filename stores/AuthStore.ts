@@ -20,7 +20,7 @@ type Actions = {
 
 export const useAuthStore = create<States & Actions>(set => ({
   user: null,
-  isLoading: false,
+  isLoading: true,
   isLogouting: false,
   error: null,
   setUser: (user: User | null) => set({ user }),

@@ -1,15 +1,11 @@
-import {
-  LoadingLottieView,
-  ShadowWrapper,
-  Text,
-  TopBar
-} from "@/components/common";
+import { LoadingLottieView, ShadowWrapper, Text } from "@/components/common";
 import { useGetFoodById } from "@/hooks/foods";
-import { RootStackParamList } from "@/types";
+import { NavigationProp, RootStackParamList } from "@/types";
+import { useNavigation } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Dot, Minus, Plus, Star } from "lucide-react-native";
+import { ArrowLeft, Dot, Minus, Plus, Star } from "lucide-react-native";
 import { useState } from "react";
-import { ScrollView, TouchableOpacity, View } from "react-native";
+import { Pressable, ScrollView, TouchableOpacity, View } from "react-native";
 import styled from "styled-components/native";
 
 type FoodDetailsProps = NativeStackScreenProps<
@@ -21,6 +17,8 @@ const FoodDetails = ({ route }: FoodDetailsProps) => {
   const [neededCount, setNeededCount] = useState(1);
   const { id } = route.params;
   const { data, isFetching } = useGetFoodById(id);
+
+  const navigation = useNavigation<NavigationProp>();
 
   const onAddNeeded = () => {
     setNeededCount(neededCount + 1);
@@ -35,7 +33,6 @@ const FoodDetails = ({ route }: FoodDetailsProps) => {
 
   return (
     <>
-      <TopBar />
       <ScrollView showsVerticalScrollIndicator={false}>
         {isFetching ? (
           <LoadingLottieView />
@@ -53,6 +50,21 @@ const FoodDetails = ({ route }: FoodDetailsProps) => {
                   }}
                 />
               </ShadowWrapper>
+              <Pressable
+                style={{
+                  position: "absolute",
+                  left: 16,
+                  top: 16,
+                  borderRadius: 100,
+                  borderColor: "black",
+                  borderWidth: 2,
+                  padding: 5,
+                  backgroundColor: "white"
+                }}
+                onPress={() => navigation.goBack()}
+              >
+                <ArrowLeft size={32} />
+              </Pressable>
               <View
                 style={{
                   position: "absolute",
@@ -69,10 +81,10 @@ const FoodDetails = ({ route }: FoodDetailsProps) => {
               </View>
             </View>
             <DetailsWrapper>
-              <Text style={{ fontFamily: "Lemon", fontSize: 32 }}>
+              <Text style={{ fontFamily: "Lemon", fontSize: 24 }}>
                 {data?.name}
               </Text>
-              <Text style={{ fontSize: 18 }}>{data?.description}</Text>
+              <Text style={{ fontSize: 16 }}>{data?.description}</Text>
             </DetailsWrapper>
             <IngredientsWrapper>
               {data?.ingredients.map((ing, i) => {
@@ -96,11 +108,11 @@ const FoodDetails = ({ route }: FoodDetailsProps) => {
                       }}
                     >
                       <Text
-                        style={{ fontFamily: "Roboto-Medium", fontSize: 22 }}
+                        style={{ fontFamily: "Roboto-Medium", fontSize: 16 }}
                       >
                         {neededUnit}
                       </Text>
-                      <Text style={{ fontSize: 22, paddingTop: 1 }}>
+                      <Text style={{ fontSize: 16, paddingTop: 1 }}>
                         {ing.name.toLowerCase()}
                       </Text>
                     </View>
@@ -131,7 +143,6 @@ export default FoodDetails;
 const ImageFood = styled.Image`
   width: "100%";
   height: 300px;
-  border-radius: 12px;
   object-fit: cover;
 `;
 
@@ -139,6 +150,8 @@ const DetailsWrapper = styled.View`
   margin-top: 22px;
   margin-bottom: 10px;
   gap: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 const IngredientsWrapper = styled.View`

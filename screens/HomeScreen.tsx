@@ -49,7 +49,7 @@ const HomeScreen = () => {
           }}
         />
         <Tab.Screen
-          name="ComingSoon1"
+          name="Favorites"
           component={ComingSoon}
           options={{
             tabBarLabel: ({}) => (
@@ -58,7 +58,7 @@ const HomeScreen = () => {
           }}
         />
         <Tab.Screen
-          name="ComingSoon2"
+          name="ConstInventory"
           component={ComingSoon}
           options={{
             tabBarLabel: ({}) => (

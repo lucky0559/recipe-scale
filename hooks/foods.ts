@@ -2,14 +2,15 @@ import api from "@/api/api";
 import { Food } from "@/types/Recipe";
 import { useQuery } from "@tanstack/react-query";
 
-const useGetFoods = (search?: string) => {
+const useGetFoods = (category: string, search?: string) => {
   return useQuery<Food[]>({
-    queryKey: ["getFoods", search],
+    queryKey: ["getFoods", search, category],
     queryFn: async () => {
       try {
         const res = await api.get("/foods", {
           params: {
-            search
+            search,
+            category
           }
         });
 

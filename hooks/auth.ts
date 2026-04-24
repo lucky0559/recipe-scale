@@ -1,7 +1,7 @@
 import api from "@/api/api";
 import { useUserStore } from "@/stores";
 import { User } from "@/types";
-import { saveTokens } from "@/utils/authStorage";
+import { getAccessToken, saveTokens } from "@/utils/authStorage";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
@@ -18,6 +18,10 @@ export const useGetCurrentUser = () => {
     queryFn: async () => {
       try {
         const res = await api.get<User>("/auth/me");
+
+        const t = await getAccessToken();
+
+        console.log("ACCESS TOKEN: ", t?.slice(0, 1000));
 
         setUser(res.data);
         return res.data;
@@ -56,13 +60,13 @@ export const useSignInWithGoogle = () => {
 };
 
 export const useLogout = () => {
-  const setUser = useUserStore(state => state.setUser);
+  const { setUser, user } = useUserStore(state => state);
   return useMutation({
     mutationKey: ["logout"],
     mutationFn: async () => {
       try {
         await api.post("/auth/logout", {
-          userId: "current-user-id" // backend will get user from token, this is just a placeholder
+          userId: user?._id // backend will get user from token, this is just a placeholder
         });
 
         // clear tokens
