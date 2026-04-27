@@ -56,7 +56,8 @@ export default function MainApp() {
       webClientId:
         "574598878465-l5cajrtm82neubg7lacq0oscqpr9nn05.apps.googleusercontent.com",
       profileImageSize: 150,
-      offlineAccess: true
+      offlineAccess: true,
+      scopes: ["profile", "email"]
     });
   }, []);
 

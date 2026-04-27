@@ -8,4 +8,5 @@ export type User = {
   avatar: string;
   createdAt: string;
   updatedAt: string;
+  name: string;
 };

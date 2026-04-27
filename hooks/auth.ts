@@ -1,7 +1,7 @@
 import api from "@/api/api";
 import { useUserStore } from "@/stores";
 import { User } from "@/types";
-import { getAccessToken, saveTokens } from "@/utils/authStorage";
+import { saveTokens } from "@/utils/authStorage";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
@@ -18,10 +18,6 @@ export const useGetCurrentUser = () => {
     queryFn: async () => {
       try {
         const res = await api.get<User>("/auth/me");
-
-        const t = await getAccessToken();
-
-        console.log("ACCESS TOKEN: ", t?.slice(0, 1000));
 
         setUser(res.data);
         return res.data;
