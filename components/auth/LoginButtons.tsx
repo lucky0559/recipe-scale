@@ -11,19 +11,26 @@ const LoginButtons = () => {
       <View>
         <TouchableOpacity
           style={{
-            backgroundColor: "#FF9A86",
-            padding: 14,
-            borderRadius: 8,
+            backgroundColor: "#F0735A",
+            paddingVertical: 16,
+            borderRadius: 14,
             display: "flex",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
+            shadowColor: "#F0735A",
+            shadowOffset: { width: 0, height: 4 },
+            shadowOpacity: 0.35,
+            shadowRadius: 10,
+            elevation: 6
           }}
-          activeOpacity={0.7}
+          activeOpacity={0.75}
         >
           <Text
             style={{
               fontFamily: "Lemon",
-              fontSize: 16
+              fontSize: 16,
+              color: "#fff",
+              letterSpacing: 0.5
             }}
           >
             Login

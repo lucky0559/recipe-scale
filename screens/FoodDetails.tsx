@@ -3,7 +3,7 @@ import { useGetFoodById } from "@/hooks/foods";
 import { NavigationProp, RootStackParamList } from "@/types";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { ArrowLeft, Dot, Minus, Plus, Star } from "lucide-react-native";
+import { ArrowLeft, Minus, Plus, Star } from "lucide-react-native";
 import { useState } from "react";
 import { Pressable, ScrollView, TouchableOpacity, View } from "react-native";
 import styled from "styled-components/native";
@@ -56,14 +56,17 @@ const FoodDetails = ({ route }: FoodDetailsProps) => {
                   left: 16,
                   top: 16,
                   borderRadius: 100,
-                  borderColor: "black",
-                  borderWidth: 2,
-                  padding: 5,
-                  backgroundColor: "white"
+                  padding: 8,
+                  backgroundColor: "rgba(255,255,255,0.92)",
+                  shadowColor: "#000",
+                  shadowOffset: { width: 0, height: 2 },
+                  shadowOpacity: 0.1,
+                  shadowRadius: 6,
+                  elevation: 3
                 }}
                 onPress={() => navigation.goBack()}
               >
-                <ArrowLeft size={32} />
+                <ArrowLeft size={26} color="#2d2018" />
               </Pressable>
               <View
                 style={{
@@ -71,13 +74,16 @@ const FoodDetails = ({ route }: FoodDetailsProps) => {
                   right: 16,
                   top: 16,
                   borderRadius: 100,
-                  borderColor: "black",
-                  borderWidth: 2,
-                  padding: 5,
-                  backgroundColor: "white"
+                  padding: 8,
+                  backgroundColor: "rgba(255,255,255,0.92)",
+                  shadowColor: "#000",
+                  shadowOffset: { width: 0, height: 2 },
+                  shadowOpacity: 0.1,
+                  shadowRadius: 6,
+                  elevation: 3
                 }}
               >
-                <Star size={32} />
+                <Star size={26} color="#2d2018" />
               </View>
             </View>
             <DetailsWrapper>
@@ -96,23 +102,35 @@ const FoodDetails = ({ route }: FoodDetailsProps) => {
                     style={{
                       display: "flex",
                       flexDirection: "row",
-                      alignItems: "center"
+                      alignItems: "center",
+                      paddingHorizontal: 20,
+                      paddingVertical: 6
                     }}
                   >
-                    <Dot size={44} color={"#F0735A"} />
+                    <View
+                      style={{
+                        width: 8,
+                        height: 8,
+                        borderRadius: 4,
+                        backgroundColor: "#F0735A",
+                        marginRight: 14,
+                        opacity: 0.85
+                      }}
+                    />
                     <View
                       style={{
                         display: "flex",
                         flexDirection: "row",
-                        gap: 3
+                        gap: 5,
+                        alignItems: "baseline"
                       }}
                     >
                       <Text
-                        style={{ fontFamily: "Roboto-Medium", fontSize: 16 }}
+                        style={{ fontFamily: "Roboto-Medium", fontSize: 15, color: "#2d2018" }}
                       >
                         {neededUnit}
                       </Text>
-                      <Text style={{ fontSize: 16, paddingTop: 1 }}>
+                      <Text style={{ fontSize: 15, color: "#5a4035", opacity: 0.8 }}>
                         {ing.name.toLowerCase()}
                       </Text>
                     </View>
@@ -155,19 +173,25 @@ const DetailsWrapper = styled.View`
 `;
 
 const IngredientsWrapper = styled.View`
-  margin-bottom: 20px;
+  margin-bottom: 100px;
 `;
 
 const StickyWrapper = styled.View`
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 24px;
+  left: 40px;
+  right: 40px;
   background-color: #f0735a;
-  padding: 12px;
-  border-radius: 12px;
+  padding-vertical: 14px;
+  padding-horizontal: 24px;
+  border-radius: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 15;
+  shadow-color: #f0735a;
+  shadow-offset: 0px 6px;
+  shadow-opacity: 0.4;
+  shadow-radius: 16px;
+  elevation: 10;
 `;

@@ -55,12 +55,14 @@ const AllFoods = () => {
         <Text
           style={{
             fontFamily: "Lemon",
-            opacity: 0.8,
-            fontSize: 12,
-            marginRight: 4
+            opacity: 0.55,
+            fontSize: 11,
+            marginRight: 4,
+            letterSpacing: 0.8,
+            textTransform: "uppercase"
           }}
         >
-          Categories
+          Category
         </Text>
         <ScrollView
           horizontal
@@ -78,16 +80,21 @@ const AllFoods = () => {
                 key={i}
                 onPress={() => setActiveCategory(c)}
                 style={{
-                  paddingHorizontal: 12,
-                  paddingVertical: 6,
+                  paddingHorizontal: 16,
+                  paddingVertical: 7,
                   borderRadius: 20,
-                  backgroundColor: isActive ? "#FFB399" : "#FFF0BE",
-                  marginRight: 8
+                  backgroundColor: isActive ? "#F0735A" : "#FEF0E8",
+                  marginRight: 6
                 }}
               >
                 <Text
                   key={i}
-                  style={{ fontFamily: "Lemon", opacity: isActive ? 1 : 0.4 }}
+                  style={{
+                    fontFamily: "Lemon",
+                    fontSize: 12,
+                    color: isActive ? "#fff" : "#C0603A",
+                    opacity: isActive ? 1 : 0.85
+                  }}
                 >
                   {c}
                 </Text>
@@ -152,10 +159,10 @@ const ParentWrapper = styled.View`
 `;
 
 const CategoryView = styled.View`
-  gap: 26px;
+  gap: 10px;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 `;
 
 const ParentList = styled.View`

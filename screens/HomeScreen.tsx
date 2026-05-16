@@ -28,15 +28,22 @@ const HomeScreen = () => {
           tabBarStyle: {
             backgroundColor: "#fff",
             elevation: 0,
-            shadowOpacity: 0
+            shadowOpacity: 0,
+            borderBottomWidth: 1,
+            borderBottomColor: "#F5ECEA"
           },
           tabBarLabelStyle: {
-            fontWeight: "bold",
-            fontSize: 16
+            fontSize: 14,
+            textTransform: "none",
+            letterSpacing: 0.3
           },
           tabBarIndicatorStyle: {
-            backgroundColor: "#F0735A"
-          }
+            backgroundColor: "#F0735A",
+            height: 2.5,
+            borderRadius: 2
+          },
+          tabBarActiveTintColor: "#F0735A",
+          tabBarInactiveTintColor: "#B0938A"
         }}
       >
         <Tab.Screen

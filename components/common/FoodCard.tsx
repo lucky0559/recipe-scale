@@ -29,10 +29,14 @@ const ParentWrapper = styled.View`
 const FoodImage = styled.Image`
   width: 100%;
   height: 220px;
-  border-radius: 10px;
+  border-radius: 18px;
 `;
 
 const DetailText = styled(Text)`
   font-family: "Lemon";
+  font-size: 13px;
+  color: #2d2018;
   margin-top: 10px;
+  margin-left: 2px;
+  letter-spacing: 0.2px;
 `;

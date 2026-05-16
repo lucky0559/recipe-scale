@@ -37,8 +37,8 @@ const Login = () => {
         >
           <Text
             style={{
-              fontSize: 28,
-              marginBottom: 6,
+              fontSize: 32,
+              marginBottom: 8,
               fontFamily: "Lemon"
             }}
           >
@@ -46,46 +46,53 @@ const Login = () => {
           </Text>
           <Text
             style={{
-              fontSize: 12,
-              fontWeight: "200",
-              fontFamily: "Lemon"
+              fontSize: 13,
+              fontWeight: "300",
+              fontFamily: "Lemon",
+              opacity: 0.65
             }}
           >
-            Please Login to continue
+            Welcome back — let's cook
           </Text>
         </View>
         <View
           style={{
             backgroundColor: "white",
-            padding: 24,
+            padding: 28,
             marginHorizontal: 20,
-            borderRadius: 8,
+            borderRadius: 20,
             marginTop: 32,
-            gap: 16,
+            gap: 18,
             ...shadow
           }}
         >
           <View>
-            <Text style={{ marginBottom: 4 }}>Username</Text>
+            <Text style={{ marginBottom: 8, fontSize: 12, opacity: 0.55, letterSpacing: 0.6 }}>USERNAME</Text>
             <TextInput
               style={{
-                borderWidth: 1,
-                borderColor: "gray",
-                padding: 8,
-                borderRadius: 4
+                borderWidth: 1.5,
+                borderColor: "#EDD8D0",
+                backgroundColor: "#FFFAF9",
+                padding: 14,
+                borderRadius: 12,
+                fontSize: 15,
+                color: "#2d2018"
               }}
             />
           </View>
           <View>
-            <Text style={{ marginBottom: 4 }}>Password</Text>
+            <Text style={{ marginBottom: 8, fontSize: 12, opacity: 0.55, letterSpacing: 0.6 }}>PASSWORD</Text>
             <View style={{ position: "relative" }}>
               <TextInput
                 style={{
-                  borderWidth: 1,
-                  borderColor: "gray",
-                  padding: 8,
-                  borderRadius: 4,
-                  paddingRight: 50
+                  borderWidth: 1.5,
+                  borderColor: "#EDD8D0",
+                  backgroundColor: "#FFFAF9",
+                  padding: 14,
+                  borderRadius: 12,
+                  paddingRight: 50,
+                  fontSize: 15,
+                  color: "#2d2018"
                 }}
                 secureTextEntry={!showPassword}
               />
@@ -94,12 +101,12 @@ const Login = () => {
                 onPress={() => setShowPassword(prev => !prev)}
                 style={{
                   position: "absolute",
-                  right: 10,
+                  right: 14,
                   top: "50%",
                   transform: [{ translateY: -12 }]
                 }}
               >
-                <Text>{showPassword ? <Eye /> : <EyeClosed />}</Text>
+                <Text>{showPassword ? <Eye size={22} color="#C0603A" /> : <EyeClosed size={22} color="#C0603A" />}</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -107,11 +114,11 @@ const Login = () => {
             style={{
               display: "flex",
               alignItems: "flex-end",
-              marginBottom: 16
+              marginBottom: 4
             }}
           >
             <TouchableOpacity>
-              <Text style={{ opacity: 0.5 }}>Forgot Password?</Text>
+              <Text style={{ opacity: 0.45, fontSize: 13 }}>Forgot Password?</Text>
             </TouchableOpacity>
           </View>
           <LoginButtons />

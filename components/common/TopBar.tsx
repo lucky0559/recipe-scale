@@ -45,7 +45,8 @@ const TopBar = () => {
   return (
     <SafeAreaView
       style={{
-        marginVertical: 20,
+        marginTop: 8,
+        marginBottom: 12,
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
@@ -53,7 +54,7 @@ const TopBar = () => {
       }}
     >
       <View>
-        <Text style={{ fontSize: 26, fontFamily: "Spicy" }}>Recipe Scale</Text>
+        <Text style={{ fontSize: 28, fontFamily: "Spicy", color: "#2d2018", letterSpacing: 0.5 }}>Recipe Scale</Text>
       </View>
       <View
         style={{
@@ -61,7 +62,7 @@ const TopBar = () => {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
-          gap: 32
+          gap: 24
         }}
       >
         <Popover

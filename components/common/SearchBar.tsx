@@ -22,26 +22,27 @@ export const SearchBar = ({ onChange }: SearchBarProps) => {
 
 const InputWrapper = styled.View`
   position: relative;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 2px;
+  margin-right: 2px;
 `;
 
 const IconWrapper = styled.View`
   position: absolute;
-  left: 16px;
+  left: 18px;
   top: 0;
   bottom: 0;
   justify-content: center;
-  opacity: 0.5;
+  opacity: 0.45;
 `;
 
 const InputStyled = styled.TextInput`
-  height: 46px;
-  border: 1px solid;
-  border-radius: 22px;
-  padding-left: 48px;
-  padding-right: 16px;
-  font-size: 16px;
+  height: 50px;
+  background-color: #f5efeb;
+  border-radius: 25px;
+  padding-left: 50px;
+  padding-right: 18px;
+  font-size: 15px;
+  color: #2d2018;
 `;
